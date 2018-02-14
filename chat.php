@@ -7,11 +7,7 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 // Validate parsed JSON data
 
-$messageWelcome = 'ขอบคุณที่ส่งข้อความถึงเรา .. TVIClaim  ยินดีบริการ เราพร้อมอยู่เคียงข้างและดูแลคุณตลอด 24 ชม.   กรุณากรุณาเลือกบริการที่ท่านต้องการติดต่อ 
-กด 1  บริการแจ้งเคลม 
-กด 2  บริการแจ้งซ่อม 
-';
-
+$messageWelcome = 'ขอบคุณที่ส่งข้อความถึงเรา .. TVIClaim ยินดีบริการ';
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
@@ -27,7 +23,7 @@ if (!is_null($events['events'])) {
 				
 				
 					'type' => 'text',
-					'text' => $text
+					'text' => $messageWelcome
 			 	
 
 			];
