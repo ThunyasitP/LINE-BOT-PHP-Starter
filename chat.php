@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
 				
 				
 					'type' => 'text',
-					'text' => $messageWelcome
+					'text' => $text
 			 	
 
 			];
