@@ -9,7 +9,7 @@ $events = json_decode($content, true);
 
 $messageWelcome = 'ขอบคุณที่ส่งข้อความถึงเรา .. TVIClaim ยินดีบริการ เราพร้อมอยู่เคียงข้างและดูแลคุณตลอด 24 ชม. กรุณาเลือกบริการที่ท่านต้องการติดต่อ';
 
-$dialogMessage = {
+$dialogMessage = array(
   "type": "template",
   "altText": "this is a carousel template",
   "template": {
@@ -75,7 +75,7 @@ $dialogMessage = {
       "imageAspectRatio": "rectangle",
       "imageSize": "cover"
   }
-};
+);
 
 
 if (!is_null($events['events'])) {
