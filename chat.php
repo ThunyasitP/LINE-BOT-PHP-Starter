@@ -40,7 +40,7 @@ if (!is_null($events['events'])) {
 				
 					'type' => 'template',
 					'altText' => 'QA',
-					'template' =>	[$messageConfrim]	 	
+					'template' =>	$messageConfrim	
 
 			];
 
