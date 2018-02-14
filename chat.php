@@ -9,73 +9,7 @@ $events = json_decode($content, true);
 
 $messageWelcome = 'ขอบคุณที่ส่งข้อความถึงเรา .. TVIClaim ยินดีบริการ เราพร้อมอยู่เคียงข้างและดูแลคุณตลอด 24 ชม. กรุณาเลือกบริการที่ท่านต้องการติดต่อ';
 
-$dialogMessage = array(
-  "type"=> "template",
-  "altText"=> "this is a carousel template",
-  "template"=> array(
-      "type"=> "carousel",
-      "columns"=> [
-          array(
-            "thumbnailImageUrl"=> "https=>//example.com/bot/images/item1.jpg",
-            "imageBackgroundColor"=> "#FFFFFF",
-            "title"=> "this is menu",
-            "text"=> "description",
-            "defaultAction"=> array(
-                "type"=> "uri",
-                "label"=> "View detail",
-                "uri"=> "http=>//example.com/page/123"
-            ),
-            "actions"=> [
-                array(
-                    "type"=> "postback",
-                    "label"=> "Buy",
-                    "data"=> "action=buy&itemid=111"
-                ),
-                array(
-                    "type"=> "postback",
-                    "label"=> "Add to cart",
-                    "data"=> "action=add&itemid=111"
-                ),
-                array(
-                    "type"=> "uri",
-                    "label"=> "View detail",
-                    "uri"=> "http=>//example.com/page/111"
-                )
-            ]
-          ),
-          array(
-            "thumbnailImageUrl"=> "https=>//example.com/bot/images/item2.jpg",
-            "imageBackgroundColor"=> "#000000",
-            "title"=> "this is menu",
-            "text"=> "description",
-            "defaultAction"=> array(
-                "type"=> "uri",
-                "label"=> "View detail",
-                "uri"=> "http=>//example.com/page/222"
-            ),
-            "actions"=> [
-                array(
-                    "type"=> "postback",
-                    "label"=> "Buy",
-                    "data"=> "action=buy&itemid=222"
-                ),
-                array(
-                    "type"=> "postback",
-                    "label"=> "Add to cart",
-                    "data"=> "action=add&itemid=222"
-                ),
-                array(
-                    "type"=> "uri",
-                    "label"=> "View detail",
-                    "uri"=> "http=>//example.com/page/222"
-                )
-            ]
-          )
-      ],
-      "imageAspectRatio"=> "rectangle",
-      "imageSize"=> "cover"
-  )
-);
+
 
 
 if (!is_null($events['events'])) {
@@ -102,7 +36,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$dialogMessage],
+				'messages' => [$messages],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -119,6 +53,8 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}
 	}
+
+	print_r($events['events']);
 }
 echo "OK";
 
