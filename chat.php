@@ -75,9 +75,7 @@ if (!is_null($events['events'])) {
 								'altText' => 'QA',
 								'template' =>	array(
 							
-										'type' => 'template',
-										'altText' => 'QA',
-										'template' =>  array(
+									
 										      'type' => 'confirm',
 										      'text' => 'Are you sure?',
 										      'actions' => array(
@@ -87,7 +85,7 @@ if (!is_null($events['events'])) {
 										            'text' => 'yes'
 										          )
 										      )
-									 	)
+									 	
 									  
 								)
 
