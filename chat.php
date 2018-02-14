@@ -68,6 +68,7 @@ if (!is_null($events['events'])) {
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => array(
+					[
 						array(
 
 							'type' => 'text',
@@ -101,6 +102,7 @@ if (!is_null($events['events'])) {
 								)
 
 						)
+					]
 					)
 				
 			];
