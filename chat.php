@@ -72,7 +72,7 @@ if (!is_null($events['events'])) {
 						array(
 
 							'type' => 'text',
-							'message' => [$messageWelcome]
+							'text' => $messageWelcome
 
 						),
 						array(
