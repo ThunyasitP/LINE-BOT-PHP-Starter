@@ -9,7 +9,24 @@ $events = json_decode($content, true);
 
 $messageWelcome = 'ขอบคุณที่ส่งข้อความถึงเรา .. TVIClaim ยินดีบริการ เราพร้อมอยู่เคียงข้างและดูแลคุณตลอด 24 ชม. กรุณาเลือกบริการที่ท่านต้องการติดต่อ';
 
-
+$messageConfrim = array(
+  
+      "type": "confirm",
+      "text": "Are you sure?",
+      "actions": [
+          array(
+            "type": "message",
+            "label": "Yes",
+            "text": "yes"
+          ),
+          array(
+            "type": "message",
+            "label": "No",
+            "text": "no"
+          )
+      ]
+  
+);
 
 
 if (!is_null($events['events'])) {
@@ -26,9 +43,9 @@ if (!is_null($events['events'])) {
 			$messages = [
 				
 				
-					'type' => 'text',
-					'text' => json_encode($events)
-			 	
+					'type' => 'template',
+					'altText' => 'QA',
+					'template' =>	$messageConfrim		 	
 
 			];
 
