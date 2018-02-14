@@ -11,18 +11,18 @@ $messageWelcome = 'ขอบคุณที่ส่งข้อความถ�
 
 $messageConfrim = array(
   
-      "type": "confirm",
-      "text": "Are you sure?",
-      "actions": [
+      "type"=> "confirm",
+      "text"=> "Are you sure?",
+      "actions"=> [
           array(
-            "type": "message",
-            "label": "Yes",
-            "text": "yes"
+            "type"=> "message",
+            "label"=> "Yes",
+            "text"=> "yes"
           ),
           array(
-            "type": "message",
-            "label": "No",
-            "text": "no"
+            "type"=> "message",
+            "label"=> "No",
+            "text"=> "no"
           )
       ]
   
