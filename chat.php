@@ -13,13 +13,13 @@ $messageConfrim = array(
   
       'type' => 'confirm',
       'text' => 'Are you sure?',
-      'actions' => [
+      'actions' => array(
           array(
             'type' => 'message',
             'label' => 'Yes',
             'text' => 'yes'
           )
-      ]
+      )
   
 );
 
