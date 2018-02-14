@@ -76,17 +76,17 @@ if (!is_null($events['events'])) {
 							
 									
 										      'type' => 'confirm',
-										      'text' => 'Are you sure?',
+										      'text' => 'ท่านต้องการติดต่อ?',
 										      'actions' => array(
 										          array(
 										            'type' => 'message',
-										            'label' => 'Yes',
-										            'text' => 'yes'
+										            'label' => '(1) แจ้งเหตุ',
+										            'text' => '1'
 										          ),
 										          array(
 										            'type' => 'message',
-										            'label' => 'No',
-										            'text' => 'no'
+										            'label' => '(2) แจ้งซ่ิม',
+										            'text' => '2'
 										          )										          
 
 										      )
