@@ -68,7 +68,7 @@ if (!is_null($events['events'])) {
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => array(
-
+						array(
 					
 								'type' => 'template',
 								'altText' => 'QA',
@@ -82,13 +82,20 @@ if (!is_null($events['events'])) {
 										            'type' => 'message',
 										            'label' => 'Yes',
 										            'text' => 'yes'
-										          )
+										          ),
+										          array(
+										            'type' => 'message',
+										            'label' => 'No',
+										            'text' => 'no'
+										          )										          
+
 										      )
 									 	
 									  
 								)
 
 						)
+					)
 				
 			];
 			$post = json_encode($data);
