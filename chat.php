@@ -10,16 +10,20 @@ $events = json_decode($content, true);
 $messageWelcome = 'ขอบคุณที่ส่งข้อความถึงเรา .. TVIClaim ยินดีบริการ เราพร้อมอยู่เคียงข้างและดูแลคุณตลอด 24 ชม. กรุณาเลือกบริการที่ท่านต้องการติดต่อ';
 
 $messageConfrim = array(
-  
-      'type' => 'confirm',
-      'text' => 'Are you sure?',
-      'actions' => array(
-          array(
-            'type' => 'message',
-            'label' => 'Yes',
-            'text' => 'yes'
-          )
-      )
+				
+	'type' => 'template',
+	'altText' => 'QA',
+	'template' =>  array(
+	      'type' => 'confirm',
+	      'text' => 'Are you sure?',
+	      'actions' => array(
+	          array(
+	            'type' => 'message',
+	            'label' => 'Yes',
+	            'text' => 'yes'
+	          )
+	      )
+  )
   
 );
 
@@ -40,15 +44,55 @@ if (!is_null($events['events'])) {
 				
 					'type' => 'template',
 					'altText' => 'QA',
-					'template' =>	[$messageConfrim]
-
+					'template' =>	array(
+				
+							'type' => 'template',
+							'altText' => 'QA',
+							'template' =>  array(
+							      'type' => 'confirm',
+							      'text' => 'Are you sure?',
+							      'actions' => array(
+							          array(
+							            'type' => 'message',
+							            'label' => 'Yes',
+							            'text' => 'yes'
+							          )
+							      )
+						 	)
+						  
+					)
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages]
+				'messages' => array(
+
+						array(
+							
+								'type' => 'template',
+								'altText' => 'QA',
+								'template' =>	array(
+							
+										'type' => 'template',
+										'altText' => 'QA',
+										'template' =>  array(
+										      'type' => 'confirm',
+										      'text' => 'Are you sure?',
+										      'actions' => array(
+										          array(
+										            'type' => 'message',
+										            'label' => 'Yes',
+										            'text' => 'yes'
+										          )
+										      )
+									 	)
+									  
+								)
+
+						)
+				)
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
