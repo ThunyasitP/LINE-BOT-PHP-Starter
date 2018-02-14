@@ -69,9 +69,15 @@ if (!is_null($events['events'])) {
 				'replyToken' => $replyToken,
 				'messages' => array(
 						array(
+
+							'type' => 'text',
+							'message' => [$messageWelcome]
+
+						),
+						array(
 					
 								'type' => 'template',
-								'altText' => 'QA',
+								'altText' => 'ท่านต้องการติดต่อ?',
 								'template' =>	array(
 							
 									
@@ -85,7 +91,7 @@ if (!is_null($events['events'])) {
 										          ),
 										          array(
 										            'type' => 'message',
-										            'label' => '(2) แจ้งซ่ิม',
+										            'label' => '(2) แจ้งซ่อม',
 										            'text' => '2'
 										          )										          
 
