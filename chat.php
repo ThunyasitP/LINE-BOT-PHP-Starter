@@ -135,17 +135,21 @@ echo "OK";
 function replyTopic( $message )
 {
 
-		$messageCallname 	= 'กรุณาระบุ ชื่อ และนามสกุล';
-		$messagePlatNumber 	= 'กรุณาระบุ หมายเลขทะเบียนรถ';
-		$messageTel 		= 'กรุณาระบุ เบอร์โทรศัพท์';
-		$messageLocation 	= 'กรุณาระบุ ระบุตำแหน่ง';
-	
-		$messageThank	= 'ขอบคุณสำหรับข้อมูลของท่านค่ะ';
+
 
 		$messageTopic1	= 'บริการแจ้งเคลม TVIClaim ยินดีดูแลลูกค้าและเคียงข้างตลอด 24 ชม.';
 		$messageTopic2	= 'บริการแจ้งซ่อม TVIClaim ยินดีดูแลลูกค้าและเคียงข้างตลอด 24 ชม.';
 
 
+		if( $message == '1')
+		{
+			return $messageTopic1;
+		}
+		else
+		{
+
+			return $messageTopic2;
+		}
 
 }
 
